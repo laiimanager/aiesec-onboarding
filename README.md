@@ -1,5 +1,3 @@
-
-https://github.com/user-attachments/assets/c68db4b1-d187-4d0a-abdf-129da1147918
 aiesec-onboarding/
  ├─ pages/
  │   ├─ index.js
