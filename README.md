@@ -1,14 +1,138 @@
 
 https://github.com/user-attachments/assets/c68db4b1-d187-4d0a-abdf-129da1147918
-# BEM VINDO NOVO MEMBRO!
-Seu primeiro passo dentro da AIESEC começa aqui. Uma jornada digital feita para você entender quem somos, como funcionamos e qual é o seu papel como líder jovem  de forma rápida, leve e prática.
-Uploading videoplayback.mp4…
-npx create-next-app aiesec-onboarding
-cd aiesec-onboarding
-# substitui os arquivos pelo que te mandei
-git init
-git add .
-git commit -m "estrutura onboarding"
-git branch -M main
-git remote add origin https://github.com/SEUUSUARIO/aiesec-onboarding.git
-git push -u origin main
+aiesec-onboarding/
+ ├─ pages/
+ │   ├─ index.js
+ │   ├─ parte1.js
+ │   ├─ parte2.js
+ │   ├─ parte3.js
+ │   └─ prova.js
+ ├─ lib/
+ │   └─ progresso.js
+ ├─ styles/
+ │   └─ globals.css
+ └─ package.json
+ export function getProgresso() {
+  if (typeof window === "undefined") return 0;
+  return Number(localStorage.getItem("progresso")) || 0;
+}
+
+export function setProgresso(valor) {
+  localStorage.setItem("progresso", valor);
+}import Link from "next/link";
+import { getProgresso } from "../lib/progresso";
+import { useEffect, useState } from "react";
+
+export default function Home() {
+  const [progresso, setProgressoState] = useState(0);
+
+  useEffect(() => {
+    setProgressoState(getProgresso());
+  }, []);
+
+  return (
+    <div className="container">
+      <h1>AIESEC Onboarding Journey</h1>
+      <p>Progresso: {progresso}%</p>
+
+      <Link href="/parte1">
+        <button>Começar</button>
+      </Link>
+    </div>
+  );
+}import { setProgresso } from "../lib/progresso";
+import Link from "next/link";
+
+export default function Parte1() {
+  return (
+    <div className="container">
+      <h2>Parte 1</h2>
+      <p>Edite aqui o conteúdo da Parte 1.</p>
+
+      <button onClick={() => setProgresso(33)}>
+        Concluir módulo
+      </button>
+
+      <Link href="/parte2">
+        <button>Ir para Parte 2</button>
+      </Link>
+    </div>
+  );
+}import { setProgresso } from "../lib/progresso";
+import Link from "next/link";
+
+export default function Parte1() {
+  return (
+    <div className="container">
+      <h2>Parte 1</h2>
+      <p>Edite aqui o conteúdo da Parte 1.</p>
+
+      <button onClick={() => setProgresso(33)}>
+        Concluir módulo
+      </button>
+
+      <Link href="/parte2">
+        <button>Ir para Parte 2</button>
+      </Link>
+    </div>
+  );
+}import { setProgresso } from "../lib/progresso";
+import Link from "next/link";
+
+export default function Parte1() {
+  return (
+    <div className="container">
+      <h2>Parte 1</h2>
+      <p>Edite aqui o conteúdo da Parte 1.</p>
+
+      <button onClick={() => setProgresso(33)}>
+        Concluir módulo
+      </button>
+
+      <Link href="/parte2">
+        <button>Ir para Parte 2</button>
+      </Link>
+    </div>
+  );
+}import { setProgresso } from "../lib/progresso";
+import Link from "next/link";
+
+export default function Parte1() {
+  return (
+    <div className="container">
+      <h2>Parte 1</h2>
+      <p>Edite aqui o conteúdo da Parte 1.</p>
+
+      <button onClick={() => setProgresso(33)}>
+        Concluir módulo
+      </button>
+
+      <Link href="/parte2">
+        <button>Ir para Parte 2</button>
+      </Link>
+    </div>
+  );
+}body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 40px;
+  background: white;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+
+button {
+  display: block;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: orange;
+  color: white;
+  cursor: pointer;
+}        
